@@ -12,6 +12,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Execute Check Process
-        run: bash .scripts/mark_file.sh
+        run: |
+            chmod +x .scripts/mark_file.sh 
+            .scripts/mark_file.sh
+        shell: bash
 
       - uses: stefanzweifel/git-auto-commit-action@v5
