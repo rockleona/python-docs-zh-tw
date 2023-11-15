@@ -1,0 +1,17 @@
+name: mark_file
+
+on:
+  push: 
+    branches:
+        test/mark_file
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Execute Check Process
+        run: bash .scripts/mark_file.sh
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
